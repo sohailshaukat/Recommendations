@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState, useEffect, useCallback } from "react";
-import { Box, Text, Grid, useColorMode, GridItem } from "@chakra-ui/react";
+import { Box, Text, Grid, useColorMode, GridItem, Center } from "@chakra-ui/react";
 
 import Control from "./components/Control";
 import Footer from "./components/Footer";
@@ -91,6 +91,11 @@ export const App = () => {
         />
         <Footer />
       </Grid>
+      <Center pt='1vh'>
+        <Text>
+          Made with ❤️ using ChakraUI and ReactJS.
+        </Text>
+      </Center>
     </Box>
   );
 };
