@@ -1,6 +1,9 @@
-import { GridItem, Text, useColorMode } from "@chakra-ui/react";
+import { GridItem, Text, TextProps, useColorMode } from "@chakra-ui/react";
+import { AnimationControls, motion } from "framer-motion";
 import React from "react";
 import Profile from "./Profile";
+
+const MotionText = motion<TextProps>(Text);
 
 const MainContent: React.FC<{
   recItem: {
@@ -9,7 +12,8 @@ const MainContent: React.FC<{
     relation: string;
     avatar: string;
     text: string;
-  };
+  },
+  contentControl: AnimationControls;
 }> = (props) => {
   const { colorMode } = useColorMode();
   return (
@@ -21,6 +25,7 @@ const MainContent: React.FC<{
         textAlign="justify"
         minW="100%"
         overflowY="auto"
+        overflowX="clip"
         css={{
           "&::-webkit-scrollbar": {
             width: "4px",
@@ -34,9 +39,11 @@ const MainContent: React.FC<{
           },
         }}
       >
-        <Text mr={{ sm: "10%", md: "10%" }} fontSize="16" lineHeight="135%">
+        <MotionText
+          animate={props.contentControl}
+          mr={{ sm: "10%", md: "10%" }} fontSize="16" lineHeight="135%">
           {props.recItem.text}
-        </Text>
+        </MotionText>
       </GridItem>
       <GridItem rowSpan={1} colSpan={6}>
         <Profile

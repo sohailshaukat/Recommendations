@@ -1,5 +1,6 @@
 const recommendations = [
   {
+    id:1,
     name: "Kaushal Govil",
     headline:
       "Solution Architect | Innovation Evangelist | Agile Practitioner | Delivery Manager",
@@ -10,6 +11,7 @@ const recommendations = [
     I have seen him growing as professional as well as individual. With his keen interest in technology backed by eagerness to learn and master he can be asset to any organization. I strongly recommend and wish Sohail a great future ahead !`,
   },
   {
+    id:2,
     name: "Mehvish Patel",
     headline:
       "Digital Tech Developer Analyst at Accenture | Ex-TCS | Quality Assurance | Content Writer | Public Speaker",
@@ -24,6 +26,7 @@ const recommendations = [
     He is very versatile in learning new technologies and taking on challenges. Highly recommend.`,
   },
   {
+    id:3,
     name: "Shubhangi Mishra",
     headline:
       "Python | Selenium | Pytest | Robot Framework | GITHUB | Native Testing | Core Java | SQL",
@@ -34,6 +37,7 @@ const recommendations = [
     text: "Sohail is extremely talented and passionate co-worker. I always address him my Genie as no automation query can be left unresolved if you approach him. He has deep understanding about automation development and has trained many in the organization as well. The skill set he posses and how well he makes use of it, at such a young age is at times unbelievable to imagine. He is a dedicated co-worker and an asset for organization.",
   },
   {
+    id:4,
     name: "Harshit Gupta",
     headline:
       "Assistant Consultant at Tata Consultancy Services, Mumbai, India",
@@ -43,6 +47,7 @@ const recommendations = [
     text: "I've known Sohail since his first day at TCS. He has grown by leaps and bounds from a Trainee to a Test Automation Lead of a team size of 10 people. He was very disciplined at his work and was able to communicate well with our client partners. Being an enthusiast and tech geek his expertise in Python and Robot Framework Technologies has really helped TCS QuEST team earn an honor of badge for us for the robust Automation Framework developed by him. With his great Critical thinking and analytical skills he was able to mettle against several challenges that came his way either from overseas or offshore by working late hours to meet them on Skype to toubleshoot their issues.I am sure you will be a valuable asset to any company you join in future. Best of luck for your future endeavors !!",
   },
   {
+    id:5,
     name: "Suraj Bhandary",
     headline: "Senior Project Delivery Manager at Tata Consultancy Services",
     relation: "May 7, 2021, Suraj managed Mohamed Sohail directly",

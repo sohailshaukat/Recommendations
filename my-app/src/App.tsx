@@ -1,29 +1,42 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Box, Text, Grid, useColorMode, GridItem } from "@chakra-ui/react";
 
 import Control from "./components/Control";
 import Footer from "./components/Footer";
 import MainContent from "./components/MainContent";
 
-import recommendations from "./Recommendations";
+import recommendations from "./recommendations";
+import { useAnimation } from "framer-motion";
 
 export const App = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   const [recommendationIndex, setRecommendationIndex] = useState(0);
 
-  const nextRecommendation = (): void => {
+  const contentControls = useAnimation();
+  // const 
+
+  const nextRecommendation = useCallback((): void => {
+    contentControls.start({
+      x:["0%","10%", "-10%", "0%"],
+      opacity:[0, 0.2, 0.8, 1],
+    })
     setRecommendationIndex((prevState: number) => {
       return prevState + 1 === recommendations.length ? 0 : prevState + 1;
     });
-  };
 
-  const prevRecommendation = (): void => {
+  },[contentControls]);
+
+  const prevRecommendation = useCallback((): void => {
+    contentControls.start({
+      x:["0%","-10%", "10%", "0%"],
+      opacity:[0, 0.2, 0.8, 1],
+    })
     setRecommendationIndex((prevState: number) => {
       return prevState === 0 ? recommendations.length - 1 : prevState - 1;
     });
-  };
+  }, [contentControls]);
 
 
   useEffect(()=>{
@@ -39,7 +52,7 @@ export const App = () => {
         toggleColorMode();
       }
     })
-  },[toggleColorMode])
+  },[toggleColorMode, nextRecommendation, prevRecommendation])
 
   const recItem = recommendations[recommendationIndex]; 
 
@@ -58,6 +71,7 @@ export const App = () => {
         gap={{ sm: "14px", md: "22px" }}
         pr={{ sm: "16px", md: "4%" }}
         pl={{ sm: "16px", md: "0" }}
+        overflow="clip"
       >
         <GridItem rowSpan={8} colSpan={1}>
           <Text
@@ -69,7 +83,7 @@ export const App = () => {
             “
           </Text>
         </GridItem>
-        <MainContent recItem={recItem}/>
+        <MainContent contentControl={contentControls} recItem={recItem}/>
         <Control
           index={recommendationIndex}
           next={nextRecommendation}
