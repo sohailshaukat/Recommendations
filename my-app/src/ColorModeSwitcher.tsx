@@ -17,15 +17,15 @@ export const ColorModeSwitcher: React.FC<{}> = (props) => {
 
   const transition = {
     type: "spring",
-    velocity: 1,
-    damping: 10,
+    stiffness:60,
+    damping: 5,
   };
 
   const variants = {
-    initial: { scale: 0.8, rotate: 120 },
-    animate: { scale: 1.2, rotate: -30, transition },
-    whileTap: { scale: 0.9, rotate: 45 },
-    whileHover: { scale: 1.2, rotate: -15 },
+    initial: { scale: 0.9 },
+    animate: { scale: 1.1, rotate: -30, transition },
+    whileTap: { scale: 0.9, rotate: 270 },
+    whileHover: { scale: 1.4, rotate: 0 },
   };
 
   return (
@@ -41,8 +41,9 @@ export const ColorModeSwitcher: React.FC<{}> = (props) => {
       animate="animate"
       variants={variants}
       initial="initial"
+      cursor="pointer"
     >
-      <SwitchIcon />
+      <SwitchIcon/>
     </MotionIcon>
   );
 };

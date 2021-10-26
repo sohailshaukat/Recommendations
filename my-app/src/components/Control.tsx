@@ -19,6 +19,7 @@ const Control: React.FC<{ index: number; next: () => void; prev: () => void }> =
             whileTap={{ scale: 0.9 }}
           >
             <ChevronLeftIcon
+            cursor="pointer"
               filter={`drop-shadow( 2px 2px 8px ${
                 colorMode === "light"
                   ? "rgba(0, 0, 0, .5)"
@@ -42,6 +43,7 @@ const Control: React.FC<{ index: number; next: () => void; prev: () => void }> =
             whileTap={{ scale: 0.9 }}
           >
             <ChevronRightIcon
+            cursor="pointer"
               filter={`drop-shadow( 2px 2px 8px ${
                 colorMode === "light"
                   ? "rgba(0, 0, 0, .5)"

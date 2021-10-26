@@ -51,11 +51,11 @@ const Profile: React.FC<{
       x: 0,
       transition: {
         when: "afterChildren",
-        staggerChildren: 0.6,
+        staggerChildren: 0.2,
       },
     },
     hidden: {
-      x: 100,
+      x: 10,
       opacity: 0.8,
     },
   };
@@ -66,7 +66,7 @@ const Profile: React.FC<{
       opacity: 0,
     },
     show: {
-      scale: [0.6, 1],
+      scale: [0.9, 1],
       opacity: [0.2, 1],
     },
   };

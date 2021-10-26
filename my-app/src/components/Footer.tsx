@@ -1,4 +1,5 @@
 import { GridItem, HStack, useColorMode, VStack, Kbd } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import React from "react";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 import { ReactComponent as DarkLogo } from "../LinkedInLogo/LinkedIn_Dark.svg";
@@ -10,13 +11,14 @@ const Footer: React.FC<{}> = (props) => {
   return (
     <GridItem mx="auto" pb={{ sm: "16px", md: "20px" }} rowSpan={1} colSpan={6}>
       <HStack>
-        <a
+        <motion.a
+          whileHover={{scale:1.08}}
           rel="noreferrer noopener"
           target="_blank"
           href="https://www.linkedin.com/in/sohailshaukat/"
         >
           {colorMode === "light" ? <DarkLogo /> : <LightLogo />}
-        </a>
+        </motion.a>
         <VStack>
           <ColorModeSwitcher />
           <Kbd>space</Kbd>
