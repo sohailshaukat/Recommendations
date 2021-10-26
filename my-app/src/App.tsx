@@ -6,7 +6,7 @@ import Control from "./components/Control";
 import Footer from "./components/Footer";
 import MainContent from "./components/MainContent";
 
-import recommendations from "./recommendations";
+import recommendations from "./Recommendations";
 import { useAnimation } from "framer-motion";
 
 export const App = () => {
