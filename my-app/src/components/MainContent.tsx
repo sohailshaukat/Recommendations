@@ -1,6 +1,6 @@
 import { GridItem, Text, TextProps, useColorMode } from "@chakra-ui/react";
 import { AnimationControls, motion } from "framer-motion";
-import React from "react";
+import React, { useEffect } from "react";
 import Profile from "./Profile";
 
 const MotionText = motion<TextProps>(Text);
@@ -16,6 +16,13 @@ const MainContent: React.FC<{
   contentControl: AnimationControls;
 }> = (props) => {
   const { colorMode } = useColorMode();
+
+  useEffect(()=>{
+    props.contentControl.start({
+      y:0,
+    })
+  },[props.contentControl]);
+
   return (
     <>
       <GridItem rowSpan={1} colSpan={5}></GridItem>
@@ -41,6 +48,9 @@ const MainContent: React.FC<{
       >
         <MotionText
           animate={props.contentControl}
+          initial={{
+            y:"-100vh"
+          }}
           mr={{ sm: "10%", md: "10%" }} fontSize="16" lineHeight="135%">
           {props.recItem.text}
         </MotionText>
