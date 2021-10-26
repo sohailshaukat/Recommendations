@@ -15,13 +15,13 @@ export const App = () => {
   const [recommendationIndex, setRecommendationIndex] = useState(0);
 
   const contentControls = useAnimation();
-  // const 
 
   const nextRecommendation = useCallback((): void => {
     contentControls.start({
       x:["0%","10%", "-10%", "0%"],
       opacity:[0, 0.2, 0.8, 1],
-    })
+    });
+    
     setRecommendationIndex((prevState: number) => {
       return prevState + 1 === recommendations.length ? 0 : prevState + 1;
     });
